@@ -1,5 +1,6 @@
 :root{
-    --abyss:#040A11;
+    --abyss:#0e1104; /*0e1104*/
+    --bg-depth:#040A11;
     --panel:#0B1720;
     --panel-2:#081119;
     --line:#1B2C37;
@@ -13,7 +14,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--abyss);
+    background:var(--bg-depth);
     color:var(--paper);
     font-family:'IBM Plex Sans', sans-serif;
     overflow-x:hidden;

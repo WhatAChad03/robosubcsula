@@ -75,13 +75,25 @@ import './style.css';
   // Scroll-tied depth gauge — the page IS the water column
   const depthFill = document.getElementById('depthFill');
   const depthReadout = document.getElementById('depthReadout');
-  const MAX_DEPTH = 60; // meters, purely narrative
+  const MAX_DEPTH = 100;
+
+  // Background darkens with scroll depth — surface tone at top, near-black at bottom
+  const SURFACE_RGB = [16, 38, 51];   // the starting tone
+  const DEEP_RGB     = [0, 0, 0];     // the deepest tone
+  function lerp(a, b, t){ return Math.round(a + (b - a) * t); }
+
   function updateDepth(){
     const doc = document.documentElement;
     const scrollable = doc.scrollHeight - doc.clientHeight;
     const pct = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+
     depthFill.style.height = (pct*100) + '%';
     depthReadout.textContent = Math.round(pct * MAX_DEPTH) + ' m';
+
+    const r = lerp(SURFACE_RGB[0], DEEP_RGB[0], pct);
+    const g = lerp(SURFACE_RGB[1], DEEP_RGB[1], pct);
+    const b = lerp(SURFACE_RGB[2], DEEP_RGB[2], pct);
+    document.documentElement.style.setProperty('--bg-depth', `rgb(${r}, ${g}, ${b})`);
   }
   window.addEventListener('scroll', updateDepth, {passive:true});
   updateDepth();
