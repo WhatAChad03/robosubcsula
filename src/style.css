@@ -1,5 +1,5 @@
 :root{
-    --abyss:#0e1104; /*0e1104*/
+    --abyss:#0e1104;
     --bg-depth:#040A11;
     --panel:#0B1720;
     --panel-2:#081119;
@@ -515,7 +515,7 @@
     color:var(--depth-bright);
   }
 
-  /* ---------- JOIN / SPONSORS ---------- */
+  /* ---------- JOIN / CREW ---------- */
   .cta-section{
     border-top:1px solid var(--line);
     padding:110px 0;
@@ -564,23 +564,44 @@
     transition:border-color 0.2s;
   }
   .btn-ghost:hover{border-color:var(--fog);}
-  .sponsor-note{
+  .crew-note{
     border-left:1px solid var(--line);
     padding-left:40px;
   }
-  @media (max-width:900px){ .sponsor-note{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:30px;} }
-  .sponsor-note .k{
+  @media (max-width:900px){ .crew-note{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:30px;} }
+  .crew-note .k{
     font-family:'IBM Plex Mono';
     font-size:12px;
     color:var(--fog);
     margin-bottom:10px;
   }
-  .sponsor-note p{
+  .crew-note p{
     color:var(--fog);
     font-size:14.5px;
     line-height:1.7;
   }
-  .sponsor-note a{color:var(--depth-bright); border-bottom:1px solid var(--depth);}
+  .crew-note a{color:var(--depth-bright); border-bottom:1px solid var(--depth);}
+
+  .crew-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:16px 0 20px;
+  }
+  .crew-name{
+    font-family:'IBM Plex Mono';
+    font-size:12px;
+    color:var(--paper);
+    border:1px solid var(--line);
+    padding:6px 10px;
+    border-radius:2px;
+    white-space:nowrap;
+    transition:border-color 0.2s, color 0.2s;
+  }
+  .crew-name:hover{
+    border-color:var(--depth-bright);
+    color:var(--depth-bright);
+  }
 
   /* ---------- FOOTER ---------- */
   footer{

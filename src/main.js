@@ -78,7 +78,7 @@ import './style.css';
   const MAX_DEPTH = 100;
 
   // Background darkens with scroll depth — surface tone at top, near-black at bottom
-  const SURFACE_RGB = [16, 38, 51];   // the starting tone
+  const SURFACE_RGB = [14, 32, 43];   // the starting tone
   const DEEP_RGB     = [0, 0, 0];     // the deepest tone
   function lerp(a, b, t){ return Math.round(a + (b - a) * t); }
 
