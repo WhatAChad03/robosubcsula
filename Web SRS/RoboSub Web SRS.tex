@@ -1,0 +1,144 @@
+\documentclass[12pt]{article} 
+
+\usepackage{geometry} 
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{titling} 
+\geometry{a4paper, margin=1in} 
+
+\title{RoboSub CSULA Website\\
+Software Requirements Specification}
+\author{
+	Christine\\
+	Katha \\
+	Jason Giang \\ 
+	Vee\\
+	}
+\date{September 2026} 
+
+\setlength{\droptitle}{6cm}
+
+\pagestyle{fancy} 
+\fancyhead[L]{RoboSub Website SRS}
+\fancyhead[R]{page \thepage} 
+\fancyfoot[C]{} 
+
+\begin{document} 
+
+\begin{titlepage} 
+\maketitle
+\thispagestyle{empty} 
+\end{titlepage} 
+
+\thispagestyle{empty} 
+\tableofcontents 
+\newpage
+
+\section*{Revision History} 
+\begin{center} 
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Name} & \textbf{Version} & \textbf{Description} & \textbf{Date}\\ 
+\hline
+Vee & v0.0 & Intial draft of Software Requirements Specification (SRS) & Sept 17, 2026\\
+\hline
+
+\end{tabular} 
+\end{center} 
+
+\newpage
+\section{Introduction} 
+
+\subsection{Purpose} 
+The purpose of this Software Requirements Specification (SRS) is to describe various initial requirements for the RoboSub CSULA Website system as of September 18th. This document defines baseline requirements, scope, and architecture of the RoboSub CSULA Website. This document will frequently be updated, and its purpose is to provide a shared overview of potential technologies used by the website.
+
+\subsection{Intended Audience} 
+This document is for: 
+\begin{itemize} 
+	\item \textbf{Users interested in the RoboSubLA Senior Design Project} 
+	\item \textbf{RoboSubLA Senior Design teams} 
+	\item \textbf{Instructors} 
+	\item \textbf{Members of the RoboSubLA Club} 
+\end{itemize} 
+
+\subsection{Intended Use} 
+The intended use of the website is to accurately detail development updates and provide details of the RoboSub fleet. The website will also list remaining competition goals and completed goals, provide users with various social links so they can stay up to date with the team's development, and provide photos and descriptions of the team members. The website will potentially provide up-to-date sensor information from the simulation's WebSocket. 
+
+\subsection{Product Scope} 
+\subsubsection{In-Scope} 
+\begin{itemize}
+	\item Provide Current details regarding RoboSubLA senior Design Team progress.
+	\item Social Media links provided to the user.
+	\item Information regarding The Fleet, resources, and sponsor information. 
+	\item Animated 3D model of the RoboSub.
+	\item Potentially catch sensor information from the Simulation and display it to the user. 
+	\item Potentially run simulations from web applications. 
+\end{itemize} 
+\subsubsection{Out of Scope} 
+\begin{itemize} 
+	\item Account Creation
+	\item Something we won't do ig 
+	\item Some other things that we won't do. 
+\end{itemize} 
+
+\subsection{Definitions and Acronym} 
+\begin{itemize}
+	\item \textbf{CSULA} — California State University, Los Angeles 
+	\item \textbf{RoboSub} — Autonomous Robotic Submarine 
+	\item \textbf{RoboSub Competition} — Yearly national RoboSub competition provided by RoboNation
+\end{itemize} 
+
+\newpage
+\section{Overall Description} 
+
+\subsection{User Needs} 
+The primary users would consist of people interested in the RoboSub Senior Design Team or the RoboSub Senior Design Team itself.\\
+Secondary users consist of instructors and the RoboSubLA Club Team 
+
+\subsection{Dependencies} 
+\subsubsection{Core Framework Dependencies} 
+\begin{itemize} 
+	\item \textbf{Vite} — Acts as a local development server allowing for quick edits. Also provides a compiler/bundler that optimizes HTML, CSS, and JS files. 
+\end{itemize} 
+\subsubsection{Communication and Bridge Dependencies} 
+\begin{itemize} 
+	\item \textbf{uWebSocket.js} — Acts as a direct WebSocket to the simulation, routing packages between the simulation and the browser. 
+\end{itemize} 
+
+\subsection{Hardware Requirements} 
+A modern web browser should be the only necessary hardware requirement. 
+
+\newpage
+\section{System Features and Requirements} 
+
+\subsection{Functional Requirements} 
+\begin{itemize} 
+	\item The website will allow for communication between the simulation and the browser, acting as a dashboard. 
+	\item Provides goals, steps towards competition, resources, and a description of the team. 
+	\item Links to RoboSubLA social media pages. 
+	\item 3D model of RoboSub. 
+\end{itemize} 
+	
+\subsection{Non-Functional Requirements} 
+\begin{itemize} 
+	\item End-to-end latency under 50ms 
+	\item WebSocket handles broadcasting high-frequency simulation packets to all connected browsers. 
+	\item Secure WebSocket protocol utilizing TLS 1.3 encryption. 
+	\item Server firewall strictly blocks all inbound traffic outside of secure web traffic ports. 
+	\item No installation required. 
+	\item Generation of highly optimized, static files. 
+\end{itemize} 
+
+\newpage
+\section{Other Requirements} 
+
+\newpage
+\section{Appendix A: Glossary} 
+
+\newpage
+\section{Appendix B: Something} 
+
+\newpage
+\section{Appendix C: Another Thing} 
+
+\end{document} 
